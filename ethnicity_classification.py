@@ -1,14 +1,10 @@
 
 import cv2
 import torch
-from transformers import AutoImageProcessor, AutoModelForImageClassification
+from transformers import AutoImageProcessor, AutoModelForImageClassification, AutoConfig
 from PIL import Image
 import numpy as np
 
-import cv2
-import torch
-from transformers import AutoImageProcessor, AutoModelForImageClassification, AutoConfig
-from PIL import Image
 
 # Load the ethnicity classifier model, processor, and configuration
 processor = AutoImageProcessor.from_pretrained("cledoux42/Ethnicity_Test_v003")
@@ -25,7 +21,7 @@ video_path = '/Users/qwu_sf/CelebV-HQ/downloaded_celebvhq/raw/vtznSlhouZc.mp4'
 cap = cv2.VideoCapture(video_path)
 
 # Frame extraction settings
-frame_rate = 30  # standard frame rate if 30 frames per second 
+frame_rate = 30  # standard frame rate ~30 frames per second 
 frame_count = 0
 results = []
 
